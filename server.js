@@ -1,6 +1,6 @@
 // Require http module
 
-const h = require('http');
+const http = require('http');
 
 // Require fs module
 
