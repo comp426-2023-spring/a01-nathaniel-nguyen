@@ -24,17 +24,16 @@ const port = arg.port || 3000;
 // The function must read a file located at `./public/index.html` and do some stuff with it.
 // The stuff that should be inside this function is all below.
 
-var temp;
-fs.readFile('./public/index.html', 'utf8', (err, data) => {
-    
 // If there is an error, put it on the console error and return. 
 // Do not be nice about exiting.
-    
+
+var temp;
+fs.readFile('./public/index.html', 'utf8', (err, data) => {
 	if (err) {
 		console.error(err);
 		return;
 	}
-	temp = data;
+    temp = data;
 });
 
 // Define a const `server` as an arrow function using http.createServer. 
@@ -47,13 +46,14 @@ fs.readFile('./public/index.html', 'utf8', (err, data) => {
 const server = http.createServer(function(req, res) {
 	res.statusCode = 200;
 	res.setHeader('Content-Type', 'text/html');
-	res.end(temp);
+    res.end(temp);
 });
 
 // Start the `server` const listening on the port defined by argument in your `port` const. 
 // Put the exact message `Server listening on port ${port}` on the console log. 
 
-server.listen(port);
-console.log(`Server listening on port ${port}`);
+server.listen(port, () => {
+	console.log(`Server listening on port ${port}`);
+});
 
 // That's it! You're all done!
