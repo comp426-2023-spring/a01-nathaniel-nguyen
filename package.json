@@ -1,0 +1,14 @@
+{
+  "name": "my-own-private-web-server",
+  "version": "1.0.0",
+  "description": "This package contains a very simple web server that takes one argument for port and then serves any files inside the public directory.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=5555"
+  },
+  "author": "nathaniel-nguyen",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
+}
